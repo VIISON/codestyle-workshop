@@ -12,6 +12,22 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<style>
+			.footer {
+				position: fixed;
+				left: 4%;
+				bottom: 4%;
+				z-index:2000000;
+				background-image:url('./logo.png');
+				display: block;
+				width: 8%;
+				height: 12%;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: left;
+			}
+		</style>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -22,10 +38,34 @@
 		</script>
 	</head>
 	<body>
+		<div class="footer"></div>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					# Codestyle?
+					Warum, läuft doch!
+				</section>
+				<section data-background-image="./office-002.jpg" data-background-opacity="0.3">
+					<h2>Wer sind wir?</h2>
+
+					<p class="fragment fade-up">Thomas Nordquist</p>
+					<p class="fragment fade-up">Manuel Kress</p>
+				</section>
+				<section data-markdown data-background-image="./office-006.jpg" data-background-opacity="0.3">
+					## von Pickware
+					[www.pickware.de/jobs](https://www.pickware.de/jobs)
+
+					Notes: Wir haben heute von Pickware frei bekommen um den Vortrag hier halten zu können
+				</section>
+				<section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
+					## Roadmap
+
+					- Was bedeutet Codestyle
+					- Welche bedeutung hat Codestyle im Team?
+					- etc.
+
+					Notes: Für mich ist es die erste Präsentation an der Uni. Fragen gerne zwischendurch stellen
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +77,11 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				// Flags whether to include the current fragment in the URL,
+				// so that reloading brings you to the same fragment position
+				fragmentInURL: false,
+				history: true,
+				mouseWheel: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },

@@ -1,94 +1,222 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<style>
-			.footer {
-				position: fixed;
-				left: 4%;
-				bottom: 4%;
-				z-index:2000000;
-				background-image:url('./logo.png');
-				display: block;
-				width: 8%;
-				height: 12%;
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: left;
-			}
-		</style>
+        <style>
+            .footer {
+                position: fixed;
+                left: 4%;
+                bottom: 4%;
+                z-index:2000000;
+                background-image:url('./logo.png');
+                display: block;
+                width: 8%;
+                height: 12%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left;
+            }
+        </style>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="footer"></div>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
-					# Codestyle?
-					Warum, läuft doch!
-				</section>
-				<section data-background-image="./office-002.jpg" data-background-opacity="0.3">
-					<h2>Wer sind wir?</h2>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="footer"></div>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown>
+                    # Codestyle?
+                    Warum, läuft doch!
+                </section>
+                <section data-background-image="./office-002.jpg" data-background-opacity="0.3">
+                    <h2>Wer sind wir?</h2>
 
-					<p class="fragment fade-up">Thomas Nordquist</p>
-					<p class="fragment fade-up">Manuel Kress</p>
-				</section>
-				<section data-markdown data-background-image="./office-006.jpg" data-background-opacity="0.3">
-					## von Pickware
-					[www.pickware.de/jobs](https://www.pickware.de/jobs)
+                    <p class="fragment fade-up">Thomas Nordquist</p>
+                    <p class="fragment fade-up">Manuel Kress</p>
+                </section>
+                <section data-markdown data-background-image="./office-006.jpg" data-background-opacity="0.3">
+                    ## von Pickware
+                    [www.pickware.de/jobs](https://www.pickware.de/jobs)
 
-					Notes: Wir haben heute von Pickware frei bekommen um den Vortrag hier halten zu können
-				</section>
-				<section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
-					## Roadmap
+                    Notes: Wir haben heute von Pickware frei bekommen um den Vortrag hier halten zu können
+                </section>
+                <section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
+                    ## Roadmap
 
-					- Was bedeutet Codestyle
-					- Welche bedeutung hat Codestyle im Team?
-					- etc.
+                    - Was bedeutet Codestyle
+                    - Welche bedeutung hat Codestyle im Team?
+                    - Wie erreiche ich einheitlichen Codestyle
 
-					Notes: Für mich ist es die erste Präsentation an der Uni. Fragen gerne zwischendurch stellen
-				</section>
-			</div>
-		</div>
+                    Notes: Für mich ist es die erste Präsentation an der Uni. Fragen gerne zwischendurch stellen
+                </section>
+                <section>
+                    <h2>Codebeispiel</h2>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                    <pre>
+                        <code data-trim data-noescape>
+                            function check(string){
+                            string=string.split(':');
+                            if (string[0]<24 && string[1]<60 && string[2]<60)
+                            return true;
+                            else return false;
+                            }
+                        </code>
+                    </pre>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				// Flags whether to include the current fragment in the URL,
-				// so that reloading brings you to the same fragment position
-				fragmentInURL: false,
-				history: true,
-				mouseWheel: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+                    <p class="fragment fade-up">Was macht der Code?</p>
+
+                </section>
+                <section data-markdown>
+                    ## Anforderungen an Code
+
+                     - Funktion
+                     - Lesbarkeit
+                     - Verständnis
+                     - Dokumentation
+                     - Wartbarkeit
+                </section>
+                <section data-transition="slide fade-out">
+                    <h2>Lesbarkeit verbessern!</h2>
+
+                </section>
+                <section data-transition="fade-in">
+                    <p>Einsatz von Whitespaces</p>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            function check(string) {
+                                string = string.split(':');
+                                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        </code>
+                    </pre>
+
+                    <aside class="notes">
+                        Erkläre explode
+                        Erkläre tabs spaces
+                    </aside>
+
+                </section>
+                <section data-transition="slide fade-out">
+                    <h2>Verständnis verbessern!</h2>
+
+                </section>
+                <section data-transition="fade-in">
+                    <p>Verständliche Benennung</p>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            function isValidTimeFormat(timeString) {
+                                timeParts = timeString.split(':');
+                                hours = timeParts[0];
+                                minutes = timeParts[1];
+                                seconds = timeParts[2];
+                                if (hours < 24 && hours < 60 && seconds < 60)
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        </code>
+                    </pre>
+
+                </section>
+                <section data-transition="slide fade-out">
+                    <h2>Dokumentation</h2>
+
+                </section>
+                <section data-transition="fade-in">
+                    <p>DocBlocks und Kommentare</p>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            /**
+                             * Checks whether time in format HH:MM:SS
+                             * @param {string} timeString
+                             * @return {bool}
+                             */
+                            function isValidTimeFormat(timeString) {
+                                timeParts = timeString.split(':');
+                                hours = timeParts[0];
+                                minutes = timeParts[1];
+                                seconds = timeParts[2];
+                                if (hours < 24 && hours < 60 && seconds < 60)
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        </code>
+                    </pre>
+
+                </section>
+                <section data-transition="slide fade-out">
+                    <h2>Wartbarkeit</h2>
+
+                </section>
+                <section data-transition="fade-in">
+                    <p>Vereinfachen!</p>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            /**
+                             * Checks whether timeString is in format HH:MM:SS
+                             * @param {string} timeString
+                             * @return {bool}
+                             */
+                            function isValidTimeFormat(timeString) {
+                                timeParts = timeString.split(':');
+                                hours = timeParts[0];
+                                minutes = timeParts[1];
+                                seconds = timeParts[2];
+
+                                return (hours < 24) && (hours < 60) && (seconds < 60);
+                            }
+                        </code>
+                    </pre>
+
+                </section>
+            </div>y
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                // Flags whether to include the current fragment in the URL,
+                // so that reloading brings you to the same fragment position
+                fragmentInURL: false,
+                history: true,
+                mouseWheel: true,
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
 </html>

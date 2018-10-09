@@ -335,19 +335,96 @@
                     >– Phil Karlton
                 </section>
 
-                <section data-markdown>
-                    ### Wie benenne ich meine
+                <section>
+                    <h2>Snake Case</h2>
+                    Wörter mit "_" getrennt.
+                    <p data-markdown>
+                      ```
+                        // Variables
+                        var wifi_pre_shared_key = "Hello";
 
-                    - Variable
-                    - Methoden
-                    - Klassen
+                        // Functions
+                        function array_merge(arr1, arr2) {
+                          ...
+                        }
+                      ```
+                    </p>
+                    <p>z.B. C++, C, Rust, PHP, Ruby...</p>
+
+                    <aside class="notes">
+                       Welche Sprachen verwenden Snake Case ?
+                    </aside>
                 </section>
 
-                  <section data-markdown>
-                    ### Wie benenne ich Variablen
+                <section>
+                    <h2>Camel Case</h2>
+                    <p data-markdown>
+                      ```
+                        var wifiPreSharedKey = "Hello";
 
+                        // Functions
+                        function arrayMerge(arr1, arr2) {
+                          ...
+                        }
+
+                        // Classes mostly begin with upper case
+                        class LibraryCard {
+                          ...
+                        }
+                      ```
+                    </p>
+                    <p>z.B. Java, Swift, JavaScript, Rust, PHP, Ruby...</p>
+
+                    <aside class="notes">
+                       Einige Sprachen verwenden beides Konventionen. z.B. Variablen in camel-case, Methoden in snake-case.
+                    </aside>
                 </section>
 
+                <section>
+                    <h2>Camel Case oder Snake Case?</h2>
+
+                    <p class="fragment fade-up">
+                        <h4>Best Practice:</h4> <br />
+                        Halte dich an Code Conventions der jeweiligen Programmiersprache.
+                    </p>
+
+                    <p class="fragment fade-up">
+                        Halte dich an den Stil des aktuellen Projektes.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Meaningful names</h2>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                        int d = 22; <span class="fragment fade-up">// elapsed time in days<span>
+                        </code>
+                    </pre>
+
+                    <p class="fragment fade-up">
+                      Gute Namen anstelle von Kommentaren.
+                      <pre class="fragment fade-up">
+                          <code data-trim data-noescape>
+                              int elapsedTimeInDays = 22;
+                          </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Meaningful names</h2>
+
+                    Methoden sollten in der Regel ein beschreibendes Verb + Objekt enthalten oder eine Verbphrase sein.
+                    <pre class="fragment fade-up">
+                        <code data-trim data-noescape>
+                        var shopingCart = new ShoppingCart();
+                        shoppingCart.addItem($book);
+                        <span class="fragment fade-up">shoppingCart.save(); // Verbphrase</span>
+                        <span class="fragment fade-up">var amount = shoppingCart.calculateAmount();</span>
+                        </code>
+                    </pre>
+                </section>
             </div>
         </div>
 

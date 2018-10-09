@@ -81,8 +81,8 @@
                     </pre>
 
                     <p class="fragment fade-up">Was macht der Code?</p>
-
                 </section>
+
                 <section data-markdown>
                     ## Anforderungen an Code
 
@@ -92,10 +92,26 @@
                      - Dokumentation
                      - Wartbarkeit
                 </section>
+
                 <section data-transition="slide fade-out">
                     <h2>Lesbarkeit verbessern!</h2>
-
                 </section>
+
+                <section>
+                    <h2>Codebeispiel</h2>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            function check(string){
+                            string=string.split(':');
+                            if (string[0]<24 && string[1]<60 && string[2]<60)
+                            return true;
+                            else return false;
+                            }
+                        </code>
+                    </pre>
+                </section>
+
                 <section data-transition="fade-in">
                     <p>Einsatz von Whitespaces</p>
 
@@ -115,12 +131,12 @@
                         Erkläre explode
                         Erkläre tabs spaces
                     </aside>
-
                 </section>
+
                 <section data-transition="slide fade-out">
                     <h2>Verständnis verbessern!</h2>
-
                 </section>
+
                 <section data-transition="fade-in">
                     <p>Verständliche Benennung</p>
 
@@ -138,12 +154,12 @@
                             }
                         </code>
                     </pre>
-
                 </section>
+
                 <section data-transition="slide fade-out">
                     <h2>Dokumentation</h2>
-
                 </section>
+
                 <section data-transition="fade-in">
                     <p>DocBlocks und Kommentare</p>
 
@@ -168,10 +184,12 @@
                     </pre>
 
                 </section>
+
                 <section data-transition="slide fade-out">
                     <h2>Wartbarkeit</h2>
 
                 </section>
+
                 <section data-transition="fade-in">
                     <p>Vereinfachen!</p>
 

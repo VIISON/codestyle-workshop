@@ -212,7 +212,137 @@
                     </pre>
 
                 </section>
-            </div>y
+
+
+                <section>
+                    <h2>Verschiedene Entwicklungsumgebungen?</h2>
+                    <ul>
+                      <li>Atom</li>
+                      <li>Sublime</li>
+                      <li>VSCode</li>
+                      <li>WebStorm</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Wo ist das Problem</h2>
+                    <p class="fragment fade-up">Jede IDE hat eigene Style-Vorgaben.</p>
+                    <p class="fragment fade-up">Zeichensatz und newlines können mit Betriebssystem variieren.</p>
+                </section>
+
+                <section>
+                    <h2>Beispiele</h2>
+                    Newlines
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            // Linux style newline
+                            print("Hello World")\n
+
+                            // Windows style newline
+                            print("Hello World")\r\n
+                        </code>
+                    </pre>
+
+                    <aside class="notes">
+                        Erkläre:<br />
+                        LF - Linefeed \n<br />
+                        CR - Carriage return \r<br />
+                        GIT kann unter Windows automatisch konvertieren
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Datei mit Newlines unter Linux</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                            var name = "Max Mustermann";\n
+                            var firstname = "";\n
+                            var idx = 0;\n
+                            while (name[idx] != " ") {\n
+                              firstname += name[idx];\n
+                              idx = idx + 1;\n
+                            }\n
+                        </code>
+                    </pre>
+
+                    <aside class="notes">
+                        Ein Teammitglied benutzt Windows, ein anderes Linux
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Darstellung unter Linux</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                            var name = "Max Mustermann";
+                            var firstname = "";
+                            var idx = 0;
+                            while (name[idx] != " ") {
+                              firstname += name[idx];
+                              idx = idx + 1;
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Darstellung unter Windows</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                            var name = "Max Mustermann";var firstname = "";var idx
+                            = 0;firstname += name[idx];idx = idx + 1;}
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Lösung: EditorConfig</h2>
+                    <img src="editorconfig-datei.png"/>
+                    <a>https://editorconfig.org</a>
+                </section>
+
+                <section>
+                    <h2>Lösung: EditorConfig</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                          # Unix-style newlines with a newline ending every file
+                          [*]
+                          end_of_line = lf
+                          insert_final_newline = true
+                          charset = utf-8
+
+                          # 4 space indentation
+                          [*.py]
+                          indent_style = space
+                          indent_size = 4
+                        </code>
+                    </pre>
+                    <a>https://editorconfig.org</a>
+                </section>
+
+                <section data-markdown>
+                    # Naming conventions
+
+                    > There are only two hard things in Computer Science: cache invalidation and naming things.
+
+                    >– Phil Karlton
+                </section>
+
+                <section data-markdown>
+                    ### Wie benenne ich meine
+
+                    - Variable
+                    - Methoden
+                    - Klassen
+                </section>
+
+                  <section data-markdown>
+                    ### Wie benenne ich Variablen
+
+                </section>
+
+            </div>
         </div>
 
         <script src="lib/js/head.min.js"></script>

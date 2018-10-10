@@ -74,7 +74,7 @@
                 hours = timeParts[0];
                 minutes = timeParts[1];
                 seconds = timeParts[2];
-                if (hours < 24 && hours < 60 && seconds < 60)
+                if (hours < 24 && minutes < 60 && seconds < 60)
                     return true;
                 else
                     return false;
@@ -102,7 +102,7 @@
                 hours = timeParts[0];
                 minutes = timeParts[1];
                 seconds = timeParts[2];
-                if (hours < 24 && hours < 60 && seconds < 60)
+                if (hours < 24 && minutes < 60 && seconds < 60)
                     return true;
                 else
                     return false;
@@ -118,7 +118,7 @@
     <pre>
         <code data-trim data-noescape>
             /**
-             * Checks whether timeString is in format HH:MM:SS
+             * Checks whether a passed time string is in format HH:MM:SS
              * @param {string} timeString
              * @return {bool}
              */
@@ -128,7 +128,7 @@
                 minutes = timeParts[1];
                 seconds = timeParts[2];
 
-                return (hours < 24) && (hours < 60) && (seconds < 60);
+                return (hours < 24) && (minutes < 60) && (seconds < 60);
             }
         </code>
     </pre>

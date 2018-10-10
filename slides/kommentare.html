@@ -10,7 +10,7 @@
             function executeRequests(requests) {
                 // Iterate and execute all requests
                 for (var i = 0; i < requests.length; i++) {
-                    requests.execute();
+                    requests[i].execute();
                 }
             }
         </code>
@@ -22,7 +22,7 @@
 <section>
     <pre>
         <code data-trim data-noescape>
-            // Check whether code is still valid
+            // Check whether coupon is still valid
             if (coupon.getValidTo() === null
                 || (time() - coupon.getTimestamp()) < 24 * 60 * 60) {
                 // ...
@@ -91,7 +91,7 @@
     <pre>
         <code data-trim data-noescape>
         $payableAmount = $order->calculateAmount();
-        $request->setCashOnDelivery(null);
+        $request->setExpectedDeliveryDate($days);
 
         // if ($order->isCashOnDelivery()) {
         //     // Add 'cash on delivery' to the request
@@ -192,7 +192,7 @@
     <pre>
         <code data-trim data-noescape>
             /**
-             * @param \DateTime|null $validTo==null infers infinite validity
+             * @param \DateTime|null $validTo == null infers infinite validity
              */
             public function setValidTo(\DateTime $validTo = null)
             {

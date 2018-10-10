@@ -57,7 +57,7 @@
                 <section data-external="./slides/example-1.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
                 <section data-external="./slides/anforderungen-an-code.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
 
-                <section>
+                <!-- <section>
                     # Was ist Code-Style?
 
                     - Formatierung
@@ -70,203 +70,11 @@
 
                 <section>
                     # Live coding
-                </section>
-
+                </section> -->
 
                 <section data-external="./slides/editorconf.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
                 <section data-external="./slides/naming-conventions.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-
-
-
-                <section data-markdown>
-                    # Kommentare
-
-                    ## Richtige Dokumentation
-                </section>
-
-                <section>
-                    <pre>
-                        <code data-trim data-noescape>
-                            function executeRequests(requests) {
-                                // Iterate and execute all requests
-                                for (var i = 0; i < requests.length; i++) {
-                                    requests.execute();
-                                }
-                            }
-                        </code>
-                    </pre>
-
-                    <h2>Keine Redundanz!</h2>
-                </section>
-
-                <section>
-                    <pre>
-                        <code data-trim data-noescape>
-                            // Check whether code is still valid
-                            if (coupon.getValidTo() === null
-                                || (time() - coupon.getTimestamp()) < 24 * 60 * 60) {
-                                // ...
-                            }
-                        </code>
-                    </pre>
-                    <h2>Selbsterklärender Code</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                        if (coupon.isValid()) {
-                            // ...
-                        }
-                        </code>
-                    </pre>
-                    <aside class="notes">
-                        Nicht mit Kommentaren reparieren!
-                        Lieber refactoren...
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Überflüssige Kommentare</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            /**
-                             * Constructor method
-                             */
-                            public function __construct() {
-                                // ...
-                            }
-
-                            /**
-                             * Sets the name
-                             */
-                            public function getName() {
-
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Positionsmarker</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            // Section for Subscribers //////////////////
-                            function getSubscribedEvents() {...}
-                            function onStartup() {...}
-
-                            // Events & Hooks //////////////////
-                            function registerHooks() {...}
-
-                            // Bootstrap methods //////////////////
-                            function loadPlugin() {...}
-                            function checkLicence() {...}
-
-                            // Setup methods //////////////////
-                            function install() {...}
-                            function update() {...}
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Toter Code</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                        $payableAmount = $order->calculateAmount();
-                        $request->setCashOnDelivery(null);
-
-                        // if ($order->isCashOnDelivery()) {
-                        //     // Add 'cash on delivery' to the request
-                        //     $request->setCashOnDelivery($payableAmount);
-                        // }
-
-                        $request->setPayableAmount($payableAmount);
-                        </code>
-                    </pre>
-
-                    <aside class="notes" data-markdown>
-                        - Muss nicht mehr gelsesen werden
-                        - Kommentare altern, wenn code sich ändert
-                        - VCS hat nach löschen immernoch eine Kopie
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Falsche Kommentare</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            public function test_hasCoupons_voucherOrder()
-                            {
-                                /** @var Order $order */
-                                $order = $this->createVoucherOrder();
-
-                                // Assert that order has no coupon
-                                self::assertTrue($this->documentManager->hasCoupons($order->getNumber()));
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Zusatzinfo</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            // File Order.php
-                            // Created by FritzFranz on 11.11.11
-
-                            class Order {
-                                // ...
-                            }
-                        </code>
-                    </pre>
-
-                    <aside class="notes" data-markdown>
-                        - Dateiname soltle bekannt sein
-                        - Wer Datei erstellthat und wann steht im VCS
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    ## Aufklären
-                    ```
-                    public function isValid()
-                    {
-                        // Vouchers are still valid the whole day
-                        // of the validTo date
-                        return self.getValidTo() === null
-                            || (now() - self.getValidTo()) < 24 * 60 * 60;
-                    }
-                    ```
-                </section>
-
-                <section data-markdown>
-                    ## Intention verdeutlichen
-                    ```
-                    fputcsv(
-                        self::$fileHandle,
-                        $columnHeaders,
-                        ';' // Use semicolon since our data may contain ','
-                    );
-                    ```
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Informieren</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            // This looks like "de-DE, en-US;q=0.9, en-GB;q=0.8"
-                            $acceptLanguage = $request->getHeader('accept-language');
-                        </code>
-                    </pre>
-                </section>
-
-                <section data-markdown>
-                    ## Achtung!
-
-                    Kommentare gehören zum Code!
-
-                    <b>Beim Refactoren beachten!</b>
-
-                </section>
+                <section data-external="./slides/kommentare.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
 
                 <section data-markdown>
                     Design
@@ -296,13 +104,8 @@
                     - Erzwingen Code-Style
                 </section>
 
-                <section>
-                    ## Keine Optimierungen
+                <section data-external="./slides/code-optimierung.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
 
-                    Geringer Performancevorteil
-
-                    Großer Verlust von Verständlichkeit und Lesbarkeit
-                </section>
 
                 <section>
                     ## Konsistenz
@@ -310,9 +113,11 @@
                     ## Konsistenz
                 </section>
 
-                <section>
+                <section data-markdown>
                     # Tooling
                 </section>
+
+                <section data-external="./slides/tooling/eslint-atom.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
 
             </div>
         </div>
@@ -331,8 +136,7 @@
                 history: true,
                 mouseWheel: true,
                 dependencies: [
-                  { src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
-
+                    { src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
                     { src: 'plugin/markdown/marked.js' },
                     { src: 'plugin/markdown/markdown.js' },
                     { src: 'plugin/notes/notes.js', async: true },

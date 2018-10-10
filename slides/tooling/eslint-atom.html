@@ -1,0 +1,49 @@
+<section data-markdown>
+    ## JavaScript
+
+    Einführung eines Codestyles in ein bestehendes Projekt.
+</section>
+
+<section data-markdown>
+    ## JavaScript
+
+    ESLint & Atom am Beispiel einer IRC library.
+    https://github.com/martynsmith/node-irc
+
+    Verwendeder Styleguide: AirBnB JavaScript
+    https://github.com/airbnb/javascript
+</section>
+
+<section data-markdown>
+    ## Setup
+
+    ```
+    git clone https://github.com/martynsmith/node-irc.git
+    cd node-irc
+
+    npm install --save-dev eslint
+    npm install --save-dev eslint-plugin-import
+    npm install --save-dev eslint-config-airbnb-base
+    ```
+
+    Atom mit _linter-eslint_
+</section>
+
+<section data-markdown>
+    ## Configure ESLint
+
+    ```
+    env:
+      browser: true
+      es6: true
+      node: true
+
+    extends:
+      - airbnb-base
+
+    rules:
+       indent: [error, 4]
+       no-console: 0
+       prefer-destructuring: 0
+    ```
+</section>

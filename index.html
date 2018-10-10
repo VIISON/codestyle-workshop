@@ -60,6 +60,7 @@
                 <section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
                     ## Roadmap
 
+                    - Motivation / Codebeispiel
                     - Was ist Code-Style?
                     - Welche Bedeutung hat Codestyle im Team?
                     - Wie erreiche ich einheitlichen Codestyle
@@ -103,7 +104,7 @@
                 </section>
 
                 <section data-transition="fade-in">
-                    <p>Einsatz von Whitespaces</p>
+                    <h2>Einsatz von Whitespaces</h2>
 
                     <pre>
                         <code data-trim data-noescape>
@@ -118,17 +119,37 @@
                     </pre>
 
                     <aside class="notes">
-                        Erkläre explode
+                        Erkläre split
                         Erkläre tabs spaces
                     </aside>
                 </section>
 
-                <section data-transition="slide fade-out">
-                    <h2>Verständnis verbessern!</h2>
+                <section data-markdown data-transition="slide fade-out">
+                    ## Verständnis verbessern!
+                    - Welche Werte habe ich?
+                    - Was bedeuten diese?
+
                 </section>
 
                 <section data-transition="fade-in">
-                    <p>Verständliche Benennung</p>
+                    <h2>Archäologie</h2>
+
+                    <pre>
+                        <code data-trim data-noescape>
+                            function check(string) {
+                                string = string.split(':'); <span class="fragment fade-up">// Werte getrennt durch ":"?</span>
+                                <span class="fragment fade-up">// Was bedeuten die Zahlen 24, 60, 60?</span>
+                                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section data-transition="fade-in">
+                    <h2>Verständliche Benennung</h2>
 
                     <pre>
                         <code data-trim data-noescape>
@@ -151,7 +172,7 @@
                 </section>
 
                 <section data-transition="fade-in">
-                    <p>DocBlocks und Kommentare</p>
+                    <h2>DocBlocks und Kommentare</h2>
 
                     <pre>
                         <code data-trim data-noescape>
@@ -175,12 +196,8 @@
 
                 </section>
 
-                <section data-transition="slide fade-out">
-                    <h2>Wartbarkeit</h2>
-                </section>
-
                 <section data-transition="fade-in">
-                    <p>Vereinfachen!</p>
+                    <h2>Vereinfachen!</h2>
 
                     <pre>
                         <code data-trim data-noescape>
@@ -226,7 +243,6 @@
                 <section>
                     # Live coding
                 </section>
-
 
                 <section>
                     <h2>Verschiedene Entwicklungsumgebungen?</h2>
@@ -399,7 +415,7 @@
                     <h2>Camel Case oder Snake Case?</h2>
 
                     <p class="fragment fade-up">
-                        <h4>Best Practice:</h4> <br />
+                        <h4>Best Practice:</h4>
                         Halte dich an Code Conventions der jeweiligen Programmiersprache.
                     </p>
 

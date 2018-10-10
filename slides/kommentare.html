@@ -113,13 +113,12 @@
     <h2>Falsche Kommentare</h2>
     <pre>
         <code data-trim data-noescape>
-            public function test_hasCoupons_voucherOrder()
+            public function test_orderHasCoupons()
             {
-                /** @var Order $order */
-                $order = $this->createVoucherOrder();
+                $order = $this->createOrder();
 
                 // Assert that order has no coupon
-                self::assertTrue($this->documentManager->hasCoupons($order->getNumber()));
+                self::assertTrue($order->hasCoupons());
             }
         </code>
     </pre>

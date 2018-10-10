@@ -34,18 +34,18 @@
 
     <pre class="fragment fade-up">
         <code data-trim data-noescape>
-            var quantity = basketItem.getQuantity();
-            if (quantity =<span class="fragment fade-up">==</span> 0) {
-                basket.remove(basketItem);
+            var line = null;
+            while (line = file.readLine()) {
+               console.log(line);
             }
         </code>
     </pre>
 
     <pre class="fragment fade-up">
         <code data-trim data-noescape>
-            var line = null;
-            while (line = file.readLine()) {
-               console.log(line);
+            var quantity = basketItem.getQuantity();
+            if (quantity =<span class="fragment fade-up">==</span> 0) {
+                basket.remove(basketItem);
             }
         </code>
     </pre>

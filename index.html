@@ -60,8 +60,8 @@
                 <section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
                     ## Roadmap
 
-                    - Was bedeutet Codestyle
-                    - Welche bedeutung hat Codestyle im Team?
+                    - Was ist Code-Style?
+                    - Welche Bedeutung hat Codestyle im Team?
                     - Wie erreiche ich einheitlichen Codestyle
 
                     Notes: Für mich ist es die erste Präsentation an der Uni. Fragen gerne zwischendurch stellen
@@ -81,16 +81,6 @@
                     </pre>
 
                     <p class="fragment fade-up">Was macht der Code?</p>
-                </section>
-
-                <section data-markdown>
-                    ## Anforderungen an Code
-
-                     - Funktion
-                     - Lesbarkeit
-                     - Verständnis
-                     - Dokumentation
-                     - Wartbarkeit
                 </section>
 
                 <section data-transition="slide fade-out">
@@ -210,6 +200,31 @@
                         </code>
                     </pre>
 
+                </section>
+
+                <section data-markdown>
+                    ## Anforderungen an Code
+
+                    - Funktion
+                    - Lesbarkeit
+                    - Verständnis
+                    - Dokumentation
+                    - Wartbarkeit
+                </section>
+
+                <section>
+                    #Was ist Code-Style?
+
+                    - Formatierung
+                    - Benennung
+                    - Kommentare
+                    - Design
+
+                    ## Konsistenz!
+                </section>
+
+                <section>
+                    # Live coding
                 </section>
 
 
@@ -398,7 +413,7 @@
 
                     <pre>
                         <code data-trim data-noescape>
-                        int d = 22; <span class="fragment fade-up">// elapsed time in days<span>
+                        int d = 22; <span class="fragment fade-up">// elapsed time in days</span>
                         </code>
                     </pre>
 
@@ -515,21 +530,6 @@
                 </section>
 
                 <section>
-                    <h2>Schließende Klammern</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            if (...) {
-                                while (...) {
-                                    for (...) {
-                                        // ...
-                                    } // for
-                                } // while
-                            } // if
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
                     <h2>Toter Code</h2>
                     <pre>
                         <code data-trim data-noescape>
@@ -541,16 +541,18 @@
                     </pre>
                 </section>
 
-
-
                 <section>
                     <h2>Falsche Kommentare</h2>
                     <pre>
                         <code data-trim data-noescape>
-                        // if ($isCashOnDelivery) {
-                        //     // Add 'cash on delivery' to the request
-                        //     $request->setCashOnDelivery($order['amount']);
-                        // }
+                            public function test_hasCoupons_voucherOrder()
+                            {
+                                /** @var Order $order */
+                                $order = $this->createVoucherOrder();
+
+                                // Assert that order has no coupon
+                                self::assertTrue($this->documentManager->hasCoupons($order->getNumber()));
+                            }
                         </code>
                     </pre>
                 </section>
@@ -559,14 +561,18 @@
                     <h2>Zusatzinfo</h2>
                     <pre>
                         <code data-trim data-noescape>
-                        // File Order.php
-                        // Created by FritzFranz on 11.11.11
+                            // File Order.php
+                            // Created by FritzFranz on 11.11.11
+
+                            class Order {
+                                // ...
+                            }
                         </code>
                     </pre>
                 </section>
 
                 <section>
-                    <h2>Aufklärend</h2>
+                    <h2>Aufklären</h2>
                     <pre>
                         <code data-trim data-noescape>
                             public function isValid()
@@ -580,7 +586,7 @@
                 </section>
 
                 <section>
-                    <h2>Versichernd</h2>
+                    <h2>Intention verdeutlichen</h2>
                     <pre>
                         <code data-trim data-noescape>
                             fputcsv(
@@ -593,13 +599,68 @@
                 </section>
 
                 <section>
-                    <h2>Informativ</h2>
+                    <h2>Informieren</h2>
                     <pre>
                         <code data-trim data-noescape>
                             // This looks like "de-DE, en-US;q=0.9, en-GB;q=0.8"
-                            $headerValue = $request->getHeader('accept-language');
+                            $acceptLanguage = $request->getHeader('accept-language');
                         </code>
                     </pre>
+                </section>
+
+                <section data-markdown>
+                    ## Achtung!
+
+                    Kommentare gehören zum Code!
+
+                    <b>Beim Refactoren beachten!</b>
+
+                </section>
+
+                <section data-markdown>
+                    Design
+                </section>
+
+                <section data-markdown>
+
+                </section>
+
+                <section data-markdown>
+                    # Codestyle im Team
+                </section>
+
+                <section>
+                    ## Einigt euch auf einen Style
+
+                    - Erhöht Lesbarkeit
+                    - Vereinfacht Einarbeitung
+                    - Legt einen Style-Guide an
+                </section>
+
+                <section>
+                    ## Automatisiert mit Tools
+
+                    - Vermeidet Fehler
+                    - Erhöht Produktivität
+                    - Erzwingen Code-Style
+                </section>
+
+                <section>
+                    ## Keine Optimierungen
+
+                    Geringer Performancevorteil
+
+                    Großer Verlust von Verständlichkeit und Lesbarkeit
+                </section>
+
+                <section>
+                    ## Konsistenz
+                    ## Konsistenz
+                    ## Konsistenz
+                </section>
+
+                <section>
+                    # Tooling
                 </section>
 
             </div>

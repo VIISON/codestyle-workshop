@@ -1,0 +1,112 @@
+<section data-markdown>
+    # Design
+
+    Notes:
+    Großes Thema!
+    Viel zu erzählen!
+
+    Nur Beispiele im weiteren Verlauf
+</section>
+
+<section>
+    <h2>Bedingungen</h2>
+
+    <pre>
+                        <code data-trim data-noescape>
+                            if (!($verified && !$disabled || $isAdmin)) {
+                                throw Exception('Login not allowed');
+                            }
+                        </code>
+                    </pre>
+
+    <pre>
+                        <code data-trim data-noescape>
+                            $loginAllowed = ($verified && !$disabled) || $isAdmin;
+                            if (!$loginAllowed) {
+                                throw Exception('Login not allowed');
+                            }
+                        </code>
+                    </pre>
+</section>
+
+<section>
+    <h2>Zuweisungen in Bedingungen</h2>
+
+    <pre>
+                        <code data-trim data-noescape>
+                            var quantity = basketItem.getQuantity();
+                            if (quantity =<span class="fragment fade-up">==</span> 0) {
+                                basket.remove(basketItem);
+                            }
+                        </code>
+                    </pre>
+
+    <pre>
+                        <code data-trim data-noescape>
+                            var line = null;
+                            while (line = file.readLine()) {
+                               console.log(line);
+                            }
+                        </code>
+                    </pre>
+</section>
+
+<section>
+    <h2>If-Else-Blöcke ohne {}</h2>
+
+    <pre>
+                        <code data-trim data-noescape>
+                            if (!success)
+                                return false;
+                        </code>
+                    </pre>
+
+    <pre class="fragment fade-up">
+                        <code data-trim data-noescape>
+                            if (!success)
+                                cleanUp();
+                                return false;
+                        </code>
+                    </pre>
+
+    <pre class="fragment fade-up">
+                        <code data-trim data-noescape>
+                            if (!success) {
+                                cleanUp();
+                                return false;
+                            }
+                        </code>
+                    </pre>
+</section>
+
+<section data-markdown>
+    ## God-Functions
+
+    ### Kleine Methoden verwenden
+    ### Single Responsibility Princip
+</section>
+
+<section>
+    <h2>Boolean Function Parameters</h2>
+
+    <pre class="fragment fade-up">
+                        <code data-trim data-noescape>
+                            function writeToFile($filename, $content, $clear = false) {
+                                // ...
+                            }
+
+                            writeToFile('system.log', 'Error appeared', true);
+                        </code>
+                    </pre>
+
+    <pre class="fragment fade-up">
+                        <code data-trim data-noescape>
+                            function writeToFile($filename, $content) { ... }
+                            function clearFile($filename) { ... }
+
+                            clearFile('system.log');
+                            writeToFile('system.log', 'Error appeared');
+                        </code>
+                    </pre>
+
+</section>

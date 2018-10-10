@@ -166,7 +166,6 @@
         ';' // Use semicolon since our data may contain ','
     );
     ```
-    </pre>
 </section>
 
 <section>
@@ -186,4 +185,36 @@
 
     <b>Beim Refactoren beachten!</b>
 
+</section>
+
+<section>
+    <h2>DocBlocks</h2>
+    <pre>
+        <code data-trim data-noescape>
+            /**
+             * @param \DateTime|null $validTo = means infinite validity
+             */
+            public function setValidTo(\DateTime $validTo = null)
+            {
+                $this->validTo = $validTo;
+            }
+        </code>
+    </pre>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
+            /**
+             * Sets the code
+             * @param Code $code The code to set
+             */
+            public function setCode(Code $code)
+            {
+                $this->code = $code;
+            }
+        </code>
+    </pre>
+    <aside class="notes">
+        Nicht zu viel
+        Nicht zu wenig
+        Optimum finden
+    </aside>
 </section>

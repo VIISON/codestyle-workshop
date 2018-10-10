@@ -1,0 +1,151 @@
+<section>
+    <h2>Codebeispiel</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            function check(string){
+            string=string.split(':');
+            if (string[0]<24 && string[1]<60 && string[2]<60)
+            return true;
+            else return false;
+            }
+        </code>
+    </pre>
+
+    <p class="fragment fade-up">Was macht der Code?</p>
+</section>
+
+<section data-transition="slide fade-out">
+    <h2>Lesbarkeit verbessern!</h2>
+</section>
+
+<section>
+    <h2>Codebeispiel</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            function check(string){
+            string=string.split(':');
+            if (string[0]<24 && string[1]<60 && string[2]<60)
+            return true;
+            else return false;
+            }
+        </code>
+    </pre>
+</section>
+
+<section data-transition="fade-in">
+    <h2>Einsatz von Whitespaces</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            function check(string) {
+                string = string.split(':');
+                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
+                    return true;
+                else
+                    return false;
+            }
+        </code>
+    </pre>
+
+    <aside class="notes">
+        Erkläre split
+        Erkläre tabs spaces
+    </aside>
+</section>
+
+<section data-markdown data-transition="slide fade-out">
+    ## Verständnis verbessern!
+    - Welche Werte habe ich?
+    - Was bedeuten diese?
+
+</section>
+
+<section data-transition="fade-in">
+    <h2>Archäologie</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            function check(string) {
+                string = string.split(':'); <span class="fragment fade-up">// Werte getrennt durch ":"?</span>
+                <span class="fragment fade-up">// Was bedeuten die Zahlen 24, 60, 60?</span>
+                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
+                    return true;
+                else
+                    return false;
+            }
+        </code>
+    </pre>
+</section>
+
+<section data-transition="fade-in">
+    <h2>Verständliche Benennung</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            function isValidTimeFormat(timeString) {
+                timeParts = timeString.split(':');
+                hours = timeParts[0];
+                minutes = timeParts[1];
+                seconds = timeParts[2];
+                if (hours < 24 && hours < 60 && seconds < 60)
+                    return true;
+                else
+                    return false;
+            }
+        </code>
+    </pre>
+</section>
+
+<section data-transition="slide fade-out">
+    <h2>Dokumentation</h2>
+</section>
+
+<section data-transition="fade-in">
+    <h2>DocBlocks und Kommentare</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            /**
+             * Checks whether time in format HH:MM:SS
+             * @param {string} timeString
+             * @return {bool}
+             */
+            function isValidTimeFormat(timeString) {
+                timeParts = timeString.split(':');
+                hours = timeParts[0];
+                minutes = timeParts[1];
+                seconds = timeParts[2];
+                if (hours < 24 && hours < 60 && seconds < 60)
+                    return true;
+                else
+                    return false;
+            }
+        </code>
+    </pre>
+
+</section>
+
+<section data-transition="fade-in">
+    <h2>Vereinfachen!</h2>
+
+    <pre>
+        <code data-trim data-noescape>
+            /**
+             * Checks whether timeString is in format HH:MM:SS
+             * @param {string} timeString
+             * @return {bool}
+             */
+            function isValidTimeFormat(timeString) {
+                timeParts = timeString.split(':');
+                hours = timeParts[0];
+                minutes = timeParts[1];
+                seconds = timeParts[2];
+
+                return (hours < 24) && (hours < 60) && (seconds < 60);
+            }
+        </code>
+    </pre>
+
+</section>

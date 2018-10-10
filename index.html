@@ -45,192 +45,16 @@
                     # Codestyle?
                     Warum, läuft doch!
                 </section>
-                <section data-background-image="./office-002.jpg" data-background-opacity="0.3">
-                    <h2>Wer sind wir?</h2>
 
-                    <p class="fragment fade-up">Thomas Nordquist</p>
-                    <p class="fragment fade-up">Manuel Kress</p>
-                </section>
-                <section data-markdown data-background-image="./office-006.jpg" data-background-opacity="0.3">
-                    ## von Pickware
-                    [www.pickware.de/jobs](https://www.pickware.de/jobs)
-
-                    Notes: Wir haben heute von Pickware frei bekommen um den Vortrag hier halten zu können
-                </section>
-                <section data-markdown data-background-image="./code.jpg" data-background-opacity="0.15">
-                    ## Roadmap
-
-                    - Motivation / Codebeispiel
-                    - Was ist Code-Style?
-                    - Welche Bedeutung hat Codestyle im Team?
-                    - Wie erreiche ich einheitlichen Codestyle
-
-                    Notes: Für mich ist es die erste Präsentation an der Uni. Fragen gerne zwischendurch stellen
-                </section>
-                <section>
-                    <h2>Codebeispiel</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            function check(string){
-                            string=string.split(':');
-                            if (string[0]<24 && string[1]<60 && string[2]<60)
-                            return true;
-                            else return false;
-                            }
-                        </code>
-                    </pre>
-
-                    <p class="fragment fade-up">Was macht der Code?</p>
-                </section>
-
-                <section data-transition="slide fade-out">
-                    <h2>Lesbarkeit verbessern!</h2>
-                </section>
+                <section data-external="./slides/who-we-are/introduction.html"> </section>
+                <section data-external="./slides/who-we-are/pickware.html"> </section>
+                <section data-external="./slides/roadmap.html"> </section>
+                <section data-external="./slides/motivation.html"> </section>
+                <section data-external="./slides/example-1.html"> </section>
+                <section data-external="./slides/anforderung-an-code.html"> </section>
 
                 <section>
-                    <h2>Codebeispiel</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            function check(string){
-                            string=string.split(':');
-                            if (string[0]<24 && string[1]<60 && string[2]<60)
-                            return true;
-                            else return false;
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section data-transition="fade-in">
-                    <h2>Einsatz von Whitespaces</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            function check(string) {
-                                string = string.split(':');
-                                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
-                                    return true;
-                                else
-                                    return false;
-                            }
-                        </code>
-                    </pre>
-
-                    <aside class="notes">
-                        Erkläre split
-                        Erkläre tabs spaces
-                    </aside>
-                </section>
-
-                <section data-markdown data-transition="slide fade-out">
-                    ## Verständnis verbessern!
-                    - Welche Werte habe ich?
-                    - Was bedeuten diese?
-
-                </section>
-
-                <section data-transition="fade-in">
-                    <h2>Archäologie</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            function check(string) {
-                                string = string.split(':'); <span class="fragment fade-up">// Werte getrennt durch ":"?</span>
-                                <span class="fragment fade-up">// Was bedeuten die Zahlen 24, 60, 60?</span>
-                                if (string[0] < 24 && string[1] < 60 && string[2] < 60)
-                                    return true;
-                                else
-                                    return false;
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section data-transition="fade-in">
-                    <h2>Verständliche Benennung</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            function isValidTimeFormat(timeString) {
-                                timeParts = timeString.split(':');
-                                hours = timeParts[0];
-                                minutes = timeParts[1];
-                                seconds = timeParts[2];
-                                if (hours < 24 && hours < 60 && seconds < 60)
-                                    return true;
-                                else
-                                    return false;
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section data-transition="slide fade-out">
-                    <h2>Dokumentation</h2>
-                </section>
-
-                <section data-transition="fade-in">
-                    <h2>DocBlocks und Kommentare</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            /**
-                             * Checks whether time in format HH:MM:SS
-                             * @param {string} timeString
-                             * @return {bool}
-                             */
-                            function isValidTimeFormat(timeString) {
-                                timeParts = timeString.split(':');
-                                hours = timeParts[0];
-                                minutes = timeParts[1];
-                                seconds = timeParts[2];
-                                if (hours < 24 && hours < 60 && seconds < 60)
-                                    return true;
-                                else
-                                    return false;
-                            }
-                        </code>
-                    </pre>
-
-                </section>
-
-                <section data-transition="fade-in">
-                    <h2>Vereinfachen!</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            /**
-                             * Checks whether timeString is in format HH:MM:SS
-                             * @param {string} timeString
-                             * @return {bool}
-                             */
-                            function isValidTimeFormat(timeString) {
-                                timeParts = timeString.split(':');
-                                hours = timeParts[0];
-                                minutes = timeParts[1];
-                                seconds = timeParts[2];
-
-                                return (hours < 24) && (hours < 60) && (seconds < 60);
-                            }
-                        </code>
-                    </pre>
-
-                </section>
-
-                <section data-markdown>
-                    ## Anforderungen an Code
-
-                    - Funktion
-                    - Lesbarkeit
-                    - Verständnis
-                    - Dokumentation
-                    - Wartbarkeit
-                </section>
-
-                <section>
-                    #Was ist Code-Style?
+                    # Was ist Code-Style?
 
                     - Formatierung
                     - Benennung
@@ -244,218 +68,11 @@
                     # Live coding
                 </section>
 
-                <section>
-                    <h2>Verschiedene Entwicklungsumgebungen?</h2>
-                    <ul>
-                      <li>Atom</li>
-                      <li>Sublime</li>
-                      <li>VSCode</li>
-                      <li>WebStorm</li>
-                    </ul>
-                </section>
 
-                <section>
-                    <h2>Wo ist das Problem?</h2>
-                    <img src="code-quality.png" />
-                    <a href="https://xkcd.com/1513/">xkcd.com/1513/</a>
-                    - &copy; CC BY-NC 2.5
-                </section>
+                <section data-external="./slides/editorconf.html"> </section>
+                <section data-external="./slides/naming-conventions.html"> </section>
 
-                <section>
-                    <h2>Wo ist das Problem?</h2>
-                    <p class="fragment fade-up">Jede IDE hat eigene Style-Vorgaben.</p>
-                    <p class="fragment fade-up">Zeichensatz und newlines können mit Betriebssystem variieren.</p>
-                </section>
 
-                <section>
-                    <h2>Beispiele</h2>
-                    Newlines
-
-                    <pre>
-                        <code data-trim data-noescape>
-                            // Linux style newline
-                            print("Hello World")\n
-
-                            // Windows style newline
-                            print("Hello World")\r\n
-                        </code>
-                    </pre>
-
-                    <aside class="notes">
-                        Erkläre:<br />
-                        LF - Linefeed \n<br />
-                        CR - Carriage return \r<br />
-                        GIT kann unter Windows automatisch konvertieren
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Datei mit Newlines unter Linux</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            var name = "Max Mustermann";\n
-                            var firstname = "";\n
-                            var idx = 0;\n
-                            while (name[idx] != " ") {\n
-                              firstname += name[idx];\n
-                              idx = idx + 1;\n
-                            }\n
-                        </code>
-                    </pre>
-
-                    <aside class="notes">
-                        Ein Teammitglied benutzt Windows, ein anderes Linux
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Darstellung unter Linux</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            var name = "Max Mustermann";
-                            var firstname = "";
-                            var idx = 0;
-                            while (name[idx] != " ") {
-                              firstname += name[idx];
-                              idx = idx + 1;
-                            }
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Darstellung unter Windows</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            var name = "Max Mustermann";var firstname = "";var idx
-                            = 0;firstname += name[idx];idx = idx + 1;}
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    <h2>Lösung: EditorConfig</h2>
-                    <img src="editorconfig-datei.png"/>
-                    <a>https://editorconfig.org</a>
-                </section>
-
-                <section>
-                    <h2>Lösung: EditorConfig</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                          # Unix-style newlines with a newline ending every file
-                          [*]
-                          end_of_line = lf
-                          insert_final_newline = true
-                          charset = utf-8
-
-                          # 4 space indentation
-                          [*.py]
-                          indent_style = space
-                          indent_size = 4
-                        </code>
-                    </pre>
-                    <a>https://editorconfig.org</a>
-                </section>
-
-                <section data-markdown>
-                    # Naming conventions
-
-                    > There are only two hard things in Computer Science: cache invalidation and naming things.
-
-                    >– Phil Karlton
-                </section>
-
-                <section>
-                    <h2>Snake Case</h2>
-                    Wörter mit "_" getrennt.
-                    <p data-markdown>
-                      ```
-                        // Variables
-                        var wifi_pre_shared_key = "Hello";
-
-                        // Functions
-                        function array_merge(arr1, arr2) {
-                          ...
-                        }
-                      ```
-                    </p>
-                    <p>z.B. C++, C, Rust, PHP, Ruby...</p>
-
-                    <aside class="notes">
-                       Welche Sprachen verwenden Snake Case ?
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Camel Case</h2>
-                    <p data-markdown>
-                      ```
-                        var wifiPreSharedKey = "Hello";
-
-                        // Functions
-                        function arrayMerge(arr1, arr2) {
-                          ...
-                        }
-
-                        // Classes mostly begin with upper case
-                        class LibraryCard {
-                          ...
-                        }
-                      ```
-                    </p>
-                    <p>z.B. Java, Swift, JavaScript, Rust, PHP, Ruby...</p>
-
-                    <aside class="notes">
-                       Einige Sprachen verwenden beides Konventionen. z.B. Variablen in camel-case, Methoden in snake-case.
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Camel Case oder Snake Case?</h2>
-
-                    <p class="fragment fade-up">
-                        <h4>Best Practice:</h4>
-                        Halte dich an Code Conventions der jeweiligen Programmiersprache.
-                    </p>
-
-                    <p class="fragment fade-up">
-                        Halte dich an den Stil des aktuellen Projektes.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Meaningful names</h2>
-
-                    <pre>
-                        <code data-trim data-noescape>
-                        int d = 22; <span class="fragment fade-up">// elapsed time in days</span>
-                        </code>
-                    </pre>
-
-                    <p class="fragment fade-up">
-                      Gute Namen anstelle von Kommentaren.
-                      <pre class="fragment fade-up">
-                          <code data-trim data-noescape>
-                              int elapsedTimeInDays = 22;
-                          </code>
-                      </pre>
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Meaningful names</h2>
-
-                    Methoden sollten in der Regel ein beschreibendes Verb + Objekt enthalten oder eine Verbphrase sein.
-                    <pre class="fragment fade-up">
-                        <code data-trim data-noescape>
-                        var shopingCart = new ShoppingCart();
-                        shoppingCart.addItem($book);
-                        <span class="fragment fade-up">shoppingCart.save(); // Verbphrase</span>
-                        <span class="fragment fade-up">var amount = shoppingCart.calculateAmount();</span>
-                        </code>
-                    </pre>
-                </section>
 
                 <section data-markdown>
                     # Kommentare
@@ -549,12 +166,23 @@
                     <h2>Toter Code</h2>
                     <pre>
                         <code data-trim data-noescape>
-                        // if ($isCashOnDelivery) {
+                        $payableAmount = $order->calculateAmount();
+                        $request->setCashOnDelivery(null);
+
+                        // if ($order->isCashOnDelivery()) {
                         //     // Add 'cash on delivery' to the request
-                        //     $request->setCashOnDelivery($order['amount']);
+                        //     $request->setCashOnDelivery($payableAmount);
                         // }
+
+                        $request->setPayableAmount($payableAmount);
                         </code>
                     </pre>
+
+                    <aside class="notes" data-markdown>
+                        - Muss nicht mehr gelsesen werden
+                        - Kommentare altern, wenn code sich ändert
+                        - VCS hat nach löschen immernoch eine Kopie
+                    </aside>
                 </section>
 
                 <section>
@@ -585,15 +213,20 @@
                             }
                         </code>
                     </pre>
+
+                    <aside class="notes" data-markdown>
+                        - Dateiname soltle bekannt sein
+                        - Wer Datei erstellthat und wann steht im VCS
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>Aufklären</h2>
-                    <pre>
-                        <code data-trim data-noescape>
+                    ## Aufklären
+                    ```
                             public function isValid()
                             {
-                                // Vouchers are still valid the whole day of the validTo date
+                                // Vouchers are still valid the whole day
+                                // of the validTo date
                                 return self.getValidTo() === null
                                     || (now() - self.getValidTo()) < 24 * 60 * 60;
                             }
@@ -601,16 +234,15 @@
                     </pre>
                 </section>
 
-                <section>
-                    <h2>Intention verdeutlichen</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            fputcsv(
-                                self::$fileHandle,
-                                $columnHeaders,
-                                ';' // Use semicolon since our data contains thousands separators (',')
-                            );
-                        </code>
+                <section data-markdown>
+                    ## Intention verdeutlichen
+                    ```
+                    fputcsv(
+                        self::$fileHandle,
+                        $columnHeaders,
+                        ';' // Use semicolon since our data may contain ','
+                    );
+                    ```
                     </pre>
                 </section>
 
@@ -696,6 +328,8 @@
                 history: true,
                 mouseWheel: true,
                 dependencies: [
+                  { src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+
                     { src: 'plugin/markdown/marked.js' },
                     { src: 'plugin/markdown/markdown.js' },
                     { src: 'plugin/notes/notes.js', async: true },

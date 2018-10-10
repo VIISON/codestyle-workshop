@@ -108,10 +108,7 @@
                     </aside>
                 </section>
 
-
-
                 <section data-external="./slides/tooling/eslint-atom.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-
             </div>
         </div>
 
@@ -136,6 +133,13 @@
                     { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
                 ]
             });
+
+            Reveal.addKeyBinding( { keyCode: 40, key: 'N', description: 'Next slide' }, function() {
+                Reveal.next();
+            })
+            Reveal.addKeyBinding( { keyCode: 38, key: 'P', description: 'Previous slide' }, function() {
+                Reveal.prev();
+            })
         </script>
     </body>
 </html>

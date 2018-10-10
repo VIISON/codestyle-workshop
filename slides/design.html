@@ -13,17 +13,18 @@
 
     <pre class="fragment fade-up">
         <code data-trim data-noescape>
-            if (!($verified && !$disabled || $isAdmin)) {
-                throw Exception('Login not allowed');
+            if (!(user.verified && !user.disabled || user.admin)) {
+                return;
             }
         </code>
     </pre>
 
     <pre class="fragment fade-up">
         <code data-trim data-noescape>
-            $loginAllowed = ($verified && !$disabled) || $isAdmin;
+            $loginAllowed =
+                (user.verified && !user.disabled) || user.admin;
             if (!$loginAllowed) {
-                throw Exception('Login not allowed');
+                return;
             }
         </code>
     </pre>

@@ -7,30 +7,32 @@
 <section>
     <pre>
         <code data-trim data-noescape>
+            // Executes requests
             function executeRequests(requests) {
-                // Iterate and execute all requests
+                // Iterate all requests
                 for (var i = 0; i < requests.length; i++) {
+                    // Execute request
                     requests[i].execute();
                 }
             }
         </code>
     </pre>
 
-    <h2>Keine Redundanz!</h2>
+    <h2 class="fragment fade-up">Keine Redundanz!</h2>
 </section>
 
 <section>
     <pre>
         <code data-trim data-noescape>
-            // Check whether coupon is still valid
+            <span class="fragment fade-up">// Check whether coupon is still valid</span>
             if (coupon.getValidTo() === null
                 || (time() - coupon.getTimestamp()) < 24 * 60 * 60) {
                 // ...
             }
         </code>
     </pre>
-    <h2>Selbsterklärender Code</h2>
-    <pre>
+    <h2 class="fragment fade-up">Selbsterklärender Code</h2>
+    <pre class="fragment fade-up">
         <code data-trim data-noescape>
         if (coupon.isValid()) {
             // ...
@@ -45,7 +47,7 @@
 
 <section>
     <h2>Überflüssige Kommentare</h2>
-    <pre>
+    <pre class="fragment fade-up">
         <code data-trim data-noescape>
             /**
              * Constructor method
@@ -53,6 +55,10 @@
             public function __construct() {
                 // ...
             }
+        </code>
+    </pre>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
 
             /**
              * Sets the name
@@ -66,7 +72,7 @@
 
 <section>
     <h2>Positionsmarker</h2>
-    <pre>
+    <pre class="fragment fade-up">
         <code data-trim data-noescape>
             // Section for Subscribers //////////////////
             function getSubscribedEvents() {...}
@@ -87,8 +93,8 @@
 </section>
 
 <section>
-    <h2>Toter Code</h2>
-    <pre>
+    <h2>Auskommentierter Code</h2>
+    <pre class="fragment fade-up">
         <code data-trim data-noescape>
         $payableAmount = $order->calculateAmount();
         $request->setExpectedDeliveryDate($days);
@@ -99,6 +105,7 @@
         // }
 
         $request->setPayableAmount($payableAmount);
+        // $request->setStatus(200);
         </code>
     </pre>
 
@@ -143,36 +150,44 @@
     </aside>
 </section>
 
-<section data-markdown>
-    ## Aufklären
-    ```
-    public function isValid()
-    {
-        // Vouchers are still valid the whole day
-        // of the validTo date
-        return self.getValidTo() === null
-            || (now() - self.getValidTo()) < 24 * 60 * 60;
-    }
-    ```
+<section>
+    <h2>Aufklären</h2>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
+            public function isValid()
+            {
+                // Vouchers are still valid the whole day
+                // of the validTo date
+                $secondsInADay = 24 * 60 * 60
+                return self.getValidTo() === null
+                    || (now() - self.getValidTo()) < $secondsInADay;
+            }
+        </code>
+    </pre>
 </section>
 
-<section data-markdown>
-    ## Intention verdeutlichen
-    ```
-    fputcsv(
-        self::$fileHandle,
-        $columnHeaders,
-        ';' // Use semicolon since our data may contain ','
-    );
-    ```
+<section>
+    <h2>Intention verdeutlichen</h2>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
+            fputcsv(
+                self::$fileHandle,
+                $columnHeaders,
+                ';' // Use semicolon since our data may contain ','
+            );
+        </code>
+    </pre>
 </section>
 
 <section>
     <h2>Informieren</h2>
     <pre>
         <code data-trim data-noescape>
-            // This looks like "de-DE, en-US;q=0.9, en-GB;q=0.8"
-            $acceptLanguage = $request->getHeader('accept-language');
+            // The 'accept-language' header looks
+            // like "de-DE; en-US;q=0.9, en-GB;q=0.8"
+            $acceptLanguageHeader = $headers->get('accept-language');
+
+            $acceptLanguages = explode(';', $acceptLanguageHeader);
         </code>
     </pre>
 </section>

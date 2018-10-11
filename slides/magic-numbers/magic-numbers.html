@@ -11,32 +11,45 @@
 
 <section>
     <h2>Magic Numbers</h2>
+    <p style="position:relative">
+      <!-- Code Block which ist visible last -->
+      <pre class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">
+        <code data-trim data-noescape>
+        const squreMetersOfAmericanFootballField = 5350;
+        function isAreaCorrect(area) {
+            return area == squreMetersOfAmericanFootballField;
+        }
+        </code>
+      </pre>
 
-    <h2>Vermeidung von Zahlen ohne eindeutige bedeutung.</h2>
-    <pre>
+      <!-- Code Block which ist visible first -->
+      <pre class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">
+        <code data-trim data-noescape>
+        <span class="fragment fade-up" data-fragment-index="0">const areaOfAmericanFootballField = 5350;</span>
+        function isAreaCorrect(area) {
+            return area == <span style="position:relative"><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">areaOfAmericanFootballField;</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">5350;</span></span>
+        }
+        </code>
+      </pre>
+    </p>
+
+    <!-- Reserve 4 lines for relative block as a spacer -->
+    <pre class="invisible">
       <code data-trim data-noescape>
-      <span class="fragment fade-up" data-fragment-index="0">const areaOfAmericanFootballField = 5350;</span>
-      function isAreaCorrect(area) {
-          return area == <span style="position:relative"><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">areaOfAmericanFootballField;</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">5350;</span>
-      }
+        reserve
+        four
+        lines
+        here
       </code>
     </pre>
 
-    Was hat eine Fläche von 5350? <span class="fragment fade-up" data-fragment-index="2">Welche Einheit?</span>
+    <p>Was hat eine Fläche von 5350?</p>
+    <p class="fragment fade-up" data-fragment-index="2">Welche Einheit?</p>
 </section>
 
 <section>
-    <h2>Magic Numbers</h2>
-
     <h2>Vermeidung von Zahlen ohne eindeutige bedeutung.</h2>
-    <pre>
-      <code data-trim data-noescape>
-      const squreMetersOfAmericanFootballField = 5350;
-      function isAreaCorrect(area) {
-          return area == squreMetersOfAmericanFootballField;
-      }
-      </code>
-    </pre>
+
 </section>
 
 <section>

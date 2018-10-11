@@ -1,5 +1,11 @@
 // tagcloud
 (function(){
+  var seed = 22;
+  function random() {
+    var x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  }
+
     [].forEach.call( document.querySelectorAll('[tagcloud]'), function(cloud) {
         // Find all tagcloud items with a weight defined and add them to this array
         var weights = [].slice.call(cloud.querySelectorAll('[tagcloud-weight]'))
@@ -30,7 +36,7 @@
             if (cloud.hasAttribute('shuffle')) {
                 //shuffle order
                 for (var i = n - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
+                    var j = Math.floor(random() * (i + 1));
                     var tmp = a[i];
                     a[i] = a[j];
                     a[j] = tmp;
@@ -66,7 +72,7 @@
             }
             // None of the cloud items are weighted, base the size randomly
             else {
-                prctnge = Math.random() * 150 + 50;
+                prctnge = random() * 150 + 50;
             }
 
             if (cloud.hasAttribute('large')) {
@@ -87,10 +93,10 @@
             var color;
 
             if (isBlackWhite) {
-                var col = Math.round(Math.random() * 155 + 100);
+                var col = Math.round(random() * 155 + 150);
                 color = 'rgb('+ col  +',' + col + ',' + col + ')';
             } else {
-                color = 'hsl('+ Math.random()*360 +', 40%, 50%)';
+                color = 'hsl('+ random()*360 +', 40%, 50%)';
             }
 
             return color;

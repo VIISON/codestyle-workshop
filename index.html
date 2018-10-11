@@ -134,11 +134,22 @@
                 ]
             });
 
-            Reveal.addKeyBinding( { keyCode: 40, key: 'N', description: 'Next slide' }, function() {
+
+            // Override Arrow left to go to next slide instead of navigating the cross-sections
+            Reveal.addKeyBinding( { keyCode: 37, key: 'ArrowLeft', description: 'Previous slide' }, function() {
+                Reveal.prev();
+            })
+            // Keycode for presenter
+            Reveal.addKeyBinding( { keyCode: 38, key: 'ArruwUp', description: 'Previous slide' }, function() {
+                Reveal.prev();
+            })
+            // Keycode for presenter
+            Reveal.addKeyBinding( { keyCode: 40, key: 'ArrowDown', description: 'Next slide' }, function() {
                 Reveal.next();
             })
-            Reveal.addKeyBinding( { keyCode: 38, key: 'P', description: 'Previous slide' }, function() {
-                Reveal.prev();
+            // Override Arrow right to go to next slide instead of navigating the cross-sections
+            Reveal.addKeyBinding( { keyCode: 39, key: 'ArrowRight', description: 'Next slide' }, function() {
+                Reveal.next();
             })
         </script>
     </body>

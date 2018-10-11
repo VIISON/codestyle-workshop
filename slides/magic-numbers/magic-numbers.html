@@ -1,0 +1,71 @@
+<section>
+    <h2>Magic Numbers</h2>
+    <img style="max-width: 55%;border: none;background: none;box-shadow:none" src="./slides/magic-numbers/wizard.png" />
+</section>
+
+<section>
+    <h2>Magic Numbers</h2>
+
+    Vermeidung von Zahlen ohne eindeutige bedeutung.
+</section>
+
+<section>
+    <h2>Magic Numbers</h2>
+
+    <h2>Vermeidung von Zahlen ohne eindeutige bedeutung.</h2>
+    <pre>
+      <code data-trim data-noescape>
+      <span class="fragment fade-up" data-fragment-index="0">const areaOfAmericanFootballField = 5350;</span>
+      function isAreaCorrect(area) {
+          return area == <span style="position:relative"><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">areaOfAmericanFootballField;</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">5350;</span>
+      }
+      </code>
+    </pre>
+
+    Was hat eine Fläche von 5350? <span class="fragment fade-up" data-fragment-index="2">Welche Einheit?</span>
+</section>
+
+<section>
+    <h2>Magic Numbers</h2>
+
+    <h2>Vermeidung von Zahlen ohne eindeutige bedeutung.</h2>
+    <pre>
+      <code data-trim data-noescape>
+      const squreMetersOfAmericanFootballField = 5350;
+      function isAreaCorrect(area) {
+          return area == squreMetersOfAmericanFootballField;
+      }
+      </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Zahlen in Variablen extrahieren</h2>
+    <pre>
+        <code data-trim data-noescape>
+        <span class="fragment fade-up" data-fragment-index="0">const hoursPerDay = 24;</span>
+        <span class="fragment fade-up" data-fragment-index="1">const minutesPerHour = 60;</span>
+        <span class="fragment fade-up" data-fragment-index="2">const secondsPerMinute = 60;</span>
+
+        function isNotOlderThenADay(date) {
+            return (now() - date) < <span style="position:relative"><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">hoursPerDay * minutesPerHour * secondsPerMinute;</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">60 * 24 * 24;</span>
+        }
+        </code>
+    </pre>
+    <p class="fragment fade-up" data-fragment-index="4">Zahlen sind Beschrieben, die Intention ist noch nicht klar.</p>
+</section>
+
+<section>
+    <h2>Zahlen in Variablen extrahieren</h2>
+    <pre>
+        <code data-trim data-noescape>
+        const secondsPerDay = 24 * 60 * 60;
+
+        function isNotOlderThenADay(date) {
+            <span class="fragment fade-up" data-fragment-index="0">var secondsSinceDate = now() - date;</span>
+            return <span style="position:relative"><span class="invisible">secondsSiceDate</span><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">secondsSiceDate</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">(now() - date)</span> < secondsPerDay
+        }
+        </code>
+    </pre>
+    <p class="fragment fade-up" data-fragment-index="4">Zahlen sind beschrieben aber die Intention ist noch nicht klar.</p>
+</section>

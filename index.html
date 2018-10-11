@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>reveal.js</title>
+        <title>Codestyle? Warum, läuft doch!</title>
 
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
@@ -82,14 +82,43 @@
                     <p>von Robert C. Martin (Uncle Bob)</p>
                 </section>
 
+                <section data-background-image="./slides/who-we-are/office-002.jpg" data-background-opacity="0.15" data-markdown>
+                    # Jobs bei Pickware
+                </section>
+
+                <section tagcloud bw data-background-image="./slides/who-we-are/office-002.jpg" data-background-opacity="0.15" >
+                    zentrale Lage
+                    großes Entwicklungspotenzial
+                    wachsendes Unternehmen
+                    sehr gutes Gehalt
+                    top Arbeitsplatz
+                    Büro-Gadgets
+                    flexible Arbeitszeiten
+                    Teamzusammenhalt
+                    Teamevents
+                    Fitness
+                    neues Office mit Dachterrasse
+                 </section>
+
+                 <section data-background-image="./slides/who-we-are/office-002.jpg" data-background-opacity="0.15">
+                    <h2>Jobs bei Pickware</h2>
+                    <p>iOS Entwicklung | Webentwicklung</p>
+                    <p>Sales | Support | Marketing</p>
+                    <br />
+                    <a href="https://pickware.de/jobs">pickware.de/jobs</a>
+                 </section>
+
                 <section data-background-image="./code.jpg" data-background-opacity="0.15" data-markdown>
                     # Vielen Dank fürs Zuhören
                 </section>
+
                 <section data-background-image="./code.jpg" data-background-opacity="0.15" data-markdown>
                     # Folien findet ihr unter
 
                     https://viison.github.io/codestyle-workshop
                 </section>
+
+
 
             </div>
         </div>
@@ -112,7 +141,8 @@
                     { src: 'plugin/markdown/marked.js' },
                     { src: 'plugin/markdown/markdown.js' },
                     { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/tagcloud/tagcloud.js', async: true }
                 ]
             });
 

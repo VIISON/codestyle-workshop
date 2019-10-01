@@ -1,144 +1,170 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Codestyle? Warum, läuft doch!</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/black.css">
+    <title>Codestyle? Warum, läuft doch!</title>
 
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-        <style>
-            .footer {
-                position: fixed;
-                left: 4%;
-                bottom: 4%;
-                z-index:2000000;
-                background-image:url('./logo.png');
-                display: block;
-                width: 8%;
-                height: 12%;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: left;
-            }
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-            .reveal pre {
-              box-shadow: none !important;
-            }
+    <style>
+        .footer {
+            position: fixed;
+            left: 4%;
+            bottom: 4%;
+            z-index: 2000000;
+            background-image: url('./logo.png');
+            display: block;
+            width: 8%;
+            height: 12%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
 
-            .invisible {
-              visibility: hidden;
-            }
-        </style>
+        .reveal pre {
+            box-shadow: none !important;
+        }
 
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
-    </head>
-    <body>
-        <div class="footer"></div>
-        <div class="reveal">
-            <div class="slides">
-                <section data-markdown>
-                    # Codestyle?
-                    Warum, läuft doch!
-                </section>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
 
-                <section data-external="./slides/who-we-are/introduction.html"> </section>
-                <section data-external="./slides/who-we-are/pickware.html"> </section>
-                <section data-external="./slides/roadmap.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/motivation/motivation.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/codebeispiel-refactoren.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/anforderungen-an-code.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/was-ist-codestyle.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/formatierung.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/naming-conventions.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/magic-numbers/magic-numbers.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/kommentare/kommentare.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/design.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/code-optimierung.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/codestye-team.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
 
-                <section data-external="./slides/tooling/deckblatt.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/tooling/editorconf.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/tooling/phpstorm-phpcs-livedemo.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/tooling/tool-list.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
-                <section data-external="./slides/tooling/eslint-atom.html" data-background-image="./code.jpg" data-background-opacity="0.15"> </section>
+<body>
+    <div class="footer"></div>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                # Codestyle?
+                Warum, läuft doch!
+            </section>
+
+            <section data-external="./slides/who-we-are/introduction.html"> </section>
+            <section data-external="./slides/who-we-are/pickware.html"> </section>
+            <section data-external="./slides/pickware-jobs.html"> </section>
+            <section data-external="./slides/roadmap.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/motivation/motivation.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/codebeispiel-refactoren.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/anforderungen-an-code.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/was-ist-codestyle.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/formatierung.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/naming-conventions.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/magic-numbers/magic-numbers.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/kommentare/kommentare.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/design.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/code-optimierung.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/codestye-team.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+
+            <section data-external="./slides/tooling/deckblatt.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/tooling/editorconf.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/tooling/phpstorm-phpcs-livedemo.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/tooling/tool-list.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
+            <section data-external="./slides/tooling/eslint-atom.html" data-background-image="./code.jpg"
+                data-background-opacity="0.15"> </section>
 
 
-                <section data-background-image="./code.jpg" data-background-opacity="0.15">
-                    <h2>Empfohlene Literatur</h2>
-                    <img style="max-height: 40vw" src="clean-code.jpg" />
-                    <p>von Robert C. Martin (Uncle Bob)</p>
-                </section>
-
-                <section data-external="./slides/pickware-jobs.html" data-background-image="./slides/who-we-are/office-002.jpg" data-background-opacity="0.15"> </section>
-
-                <section data-background-image="./code.jpg" data-background-opacity="0.15" data-markdown>
-                    # Vielen Dank fürs Zuhören
-                </section>
-
-                <section data-background-image="./code.jpg" data-background-opacity="0.15" data-markdown>
-                    # Folien findet ihr unter
-
-                    https://viison.github.io/codestyle-workshop
-                </section>
+            <section data-background-image="./code.jpg" data-background-opacity="0.15">
+                <h2>Empfohlene Literatur</h2>
+                <img style="max-height: 40vw" src="clean-code.jpg" />
+                <p>von Robert C. Martin (Uncle Bob)</p>
+            </section>
 
 
+            <section data-background-image="./code.jpg" data-background-opacity="0.15" data-markdown>
+                # Vielen Dank fürs Zuhören
+            </section>
 
-            </div>
+            <section data-background-image="./code.jpg" data-background-opacity="0.15">
+                <h2>Folien findet ihr unter</h2>
+                <a
+                    href="https://pickware.github.io/codestyle-workshop">https://pickware.github.io/codestyle-workshop</a>
+
+                <br /><br /><br />
+                <h2>Jobs findet ihr hier</h2>
+                <a href="https://www.pickware.de/jobs">https://www.pickware.de/jobs</a>
+
+
+            </section>
+
+
+
         </div>
+    </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-        <script>
-            // More info about config & dependencies:
-            // - https://github.com/hakimel/reveal.js#configuration
-            // - https://github.com/hakimel/reveal.js#dependencies
-            Reveal.initialize({
-                // Flags whether to include the current fragment in the URL,
-                // so that reloading brings you to the same fragment position
-                fragmentInURL: false,
-                history: true,
-                mouseWheel: true,
-                dependencies: [
-                    { src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'plugin/tagcloud/tagcloud.js', async: true }
-                ]
-            });
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Flags whether to include the current fragment in the URL,
+            // so that reloading brings you to the same fragment position
+            fragmentInURL: false,
+            history: true,
+            mouseWheel: true,
+            dependencies: [
+                { src: 'plugin/external/external/external.js', condition: function () { return !!document.querySelector('[data-external]'); } },
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/tagcloud/tagcloud.js', async: true }
+            ]
+        });
 
 
-            // Override Arrow left to go to next slide instead of navigating the cross-sections
-            Reveal.addKeyBinding( { keyCode: 37, key: 'ArrowLeft', description: 'Previous slide' }, function() {
-                Reveal.prev();
-            })
-            // Keycode for presenter
-            Reveal.addKeyBinding( { keyCode: 38, key: 'ArruwUp', description: 'Previous slide' }, function() {
-                Reveal.prev();
-            })
-            // Keycode for presenter
-            Reveal.addKeyBinding( { keyCode: 40, key: 'ArrowDown', description: 'Next slide' }, function() {
-                Reveal.next();
-            })
-            // Override Arrow right to go to next slide instead of navigating the cross-sections
-            Reveal.addKeyBinding( { keyCode: 39, key: 'ArrowRight', description: 'Next slide' }, function() {
-                Reveal.next();
-            })
-        </script>
-    </body>
+        // Override Arrow left to go to next slide instead of navigating the cross-sections
+        Reveal.addKeyBinding({ keyCode: 37, key: 'ArrowLeft', description: 'Previous slide' }, function () {
+            Reveal.prev();
+        })
+        // Keycode for presenter
+        Reveal.addKeyBinding({ keyCode: 38, key: 'ArruwUp', description: 'Previous slide' }, function () {
+            Reveal.prev();
+        })
+        // Keycode for presenter
+        Reveal.addKeyBinding({ keyCode: 40, key: 'ArrowDown', description: 'Next slide' }, function () {
+            Reveal.next();
+        })
+        // Override Arrow right to go to next slide instead of navigating the cross-sections
+        Reveal.addKeyBinding({ keyCode: 39, key: 'ArrowRight', description: 'Next slide' }, function () {
+            Reveal.next();
+        })
+    </script>
+</body>
+
 </html>

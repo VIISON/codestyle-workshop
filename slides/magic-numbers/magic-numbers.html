@@ -6,24 +6,28 @@
 <section>
     <h2>Magic Numbers</h2>
 
-    Zahlen welche welche keiner eindeutigen Bedeutung zugeordnet sind.
+    Zahlen welche keiner eindeutigen Bedeutung zugeordnet sind.
 </section>
 
 <section>
     <h2>Magic Numbers</h2>
     <p style="position:relative">
-      <!-- Code Block which ist visible last -->
-      <pre class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">
+        <!-- Code Block which ist visible last -->
+        <pre class="fragment fade-in"
+            style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;"
+            data-fragment-index="3">
         <code data-trim data-noescape>
-        const squreMetersOfAmericanFootballField = 5350;
+        const squareMetersOfAmericanFootballField = 5350;
         function isAreaCorrect(area) {
-            return area == squreMetersOfAmericanFootballField;
+            return area == squareMetersOfAmericanFootballField;
         }
         </code>
       </pre>
 
-      <!-- Code Block which ist visible first -->
-      <pre class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">
+        <!-- Code Block which ist visible first -->
+        <pre class="fragment fade-out"
+            style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;"
+            data-fragment-index="3">
         <code data-trim data-noescape>
         <span class="fragment fade-up" data-fragment-index="0">const areaOfAmericanFootballField = 5350;</span>
         function isAreaCorrect(area) {
@@ -61,6 +65,7 @@
         </code>
     </pre>
     <p class="fragment fade-up" data-fragment-index="4">Zahlen sind Beschrieben, die Intention ist noch nicht klar.</p>
+    <aside class="notes">Fehler: 60 * 24 * 24 nach ersetzen hervorheben</aside>
 </section>
 
 <section>
@@ -71,7 +76,7 @@
 
         function isNotOlderThenADay(date) {
             <span class="fragment fade-up" data-fragment-index="0">var secondsSinceDate = now() - date;</span>
-            return <span style="position:relative"><span class="invisible">secondsSiceDate</span><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">secondsSiceDate</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">(now() - date)</span> < secondsPerDay
+            return <span style="position:relative"><span class="invisible">secondsSinceDate</span><span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">secondsSinceDate</span><span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">(now() - date)</span> < secondsPerDay
         }
         </code>
     </pre>

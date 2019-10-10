@@ -5,6 +5,48 @@
 </section>
 
 <section>
+    <h2>Aufklären</h2>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
+            public function isValid()
+            {
+                // Vouchers are still valid the whole day
+                // of the validTo date
+                $secondsInADay = 24 * 60 * 60
+                return self.getValidTo() === null
+                    || (now() - self.getValidTo()) < $secondsInADay;
+            }
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Intention verdeutlichen</h2>
+    <pre class="fragment fade-up">
+        <code data-trim data-noescape>
+            fputcsv(
+                self::$fileHandle,
+                $columnHeaders,
+                ';' // Use semicolon since our data may contain ','
+            );
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Informieren</h2>
+    <pre>
+        <code data-trim data-noescape>
+            // The 'accept-language' header looks
+            // like "de-DE; en-US;q=0.9, en-GB;q=0.8"
+            $acceptLanguageHeader = $headers->get('accept-language');
+
+            $acceptLanguages = explode(';', $acceptLanguageHeader);
+        </code>
+    </pre>
+</section>
+
+<section>
     <pre>
         <code data-trim data-noescape>
             // Executes requests
@@ -68,6 +110,7 @@
             }
         </code>
     </pre>
+    <aside class="notes">// Sets the name !== getName</aside>
 </section>
 
 <section>
@@ -154,48 +197,6 @@
     <h2>Git Blame</h2>
     <img src="./slides/kommentare/git-blame.png" />
     Auszug aus dem Linux Kernel
-</section>
-
-<section>
-    <h2>Aufklären</h2>
-    <pre class="fragment fade-up">
-        <code data-trim data-noescape>
-            public function isValid()
-            {
-                // Vouchers are still valid the whole day
-                // of the validTo date
-                $secondsInADay = 24 * 60 * 60
-                return self.getValidTo() === null
-                    || (now() - self.getValidTo()) < $secondsInADay;
-            }
-        </code>
-    </pre>
-</section>
-
-<section>
-    <h2>Intention verdeutlichen</h2>
-    <pre class="fragment fade-up">
-        <code data-trim data-noescape>
-            fputcsv(
-                self::$fileHandle,
-                $columnHeaders,
-                ';' // Use semicolon since our data may contain ','
-            );
-        </code>
-    </pre>
-</section>
-
-<section>
-    <h2>Informieren</h2>
-    <pre>
-        <code data-trim data-noescape>
-            // The 'accept-language' header looks
-            // like "de-DE; en-US;q=0.9, en-GB;q=0.8"
-            $acceptLanguageHeader = $headers->get('accept-language');
-
-            $acceptLanguages = explode(';', $acceptLanguageHeader);
-        </code>
-    </pre>
 </section>
 
 <section data-markdown>
